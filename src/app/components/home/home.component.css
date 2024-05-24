@@ -1,0 +1,9 @@
+.text-overlay {
+    position: relative;
+    z-index: 3;
+    color: white;
+}
+
+.btn-secondary, .btn-white-outline {
+    margin-right: 10px;
+}

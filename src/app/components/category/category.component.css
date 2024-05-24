@@ -1,0 +1,47 @@
+/* src/app/category/category.component.css */
+
+/* Ensure this part is not duplicated if it's already in the navbar CSS */
+/* Center the text and change its color */
+.intro-excerpt {
+    text-align: center; /* Center the text */
+    margin-top: 200px; /* Adjust to position the text lower */
+  }
+  
+  .intro-excerpt h1 {
+    color: white; /* Set the color of "Categories" to white */
+  }
+  
+  .intro-excerpt h1 .highlight {
+    color: #FFC107; /* Set the color of "Our" to yellow */
+  }
+  
+  /* Category Item Styles */
+  .category-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 150px; /* Adjust height as needed */
+    background-color: #f8f9fa; /* Background color for category item */
+    text-decoration: none; /* Remove underline from links */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow effect */
+  }
+  
+  .category-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow effect on hover */
+  }
+  
+  .category-name {
+    font-size: 1.5rem; /* Adjust font size as needed */
+    font-weight: 700;
+    color: #333; /* Text color */
+    text-align: center;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
