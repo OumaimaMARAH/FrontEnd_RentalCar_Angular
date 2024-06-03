@@ -1,0 +1,60 @@
+<div class="container bootdey">
+  <div class="row">
+    <div class="col-md-3">
+      <section class="panel">
+        <div class="panel-body">
+          <input type="text" #searchInput placeholder="Keyword Search" class="form-control"
+            (input)="searchProductsByName(searchInput.value)" />
+
+        </div>
+      </section>
+      <section class="panel">
+        <header class="panel-heading">
+          Category
+        </header>
+        <app-subcategory (subcategorySelected)="getProductsBySubCategoryId($event)"></app-subcategory>
+      </section>
+
+
+    </div>
+    <div class="col-md-9">
+      <div class="row product-list">
+        <div class="col-md-4" *ngFor="let product of paginatedProducts">
+          <section class="panel">
+            <div class="pro-img-box">
+              <img src="https://www.bootdey.com/image/250x220/FFB6C1/000000" alt="" />
+              <a class="adtocart">
+                <i class="fa fa-shopping-cart"></i>
+              </a>
+            </div>
+            <div class="panel-body text-center">
+              <h4 class="pro-title">{{ product.productName }}</h4>
+              <p class="price">{{ product.price }} DH/Day</p>
+              <button class="btn btn-primary" [routerLink]="['/product/details', product.productId]">Rent Now</button>
+
+            </div>
+          </section>
+        </div>
+      </div>
+      <nav aria-label="Page navigation example" *ngIf="paginatedProducts.length > 0">
+        <ul class="pagination justify-content-center">
+          <li class="page-item" [class.disabled]="currentPage === 1">
+            <a class="page-link" href="#" aria-label="Previous" (click)="goToPage(currentPage - 1, $event)">
+              <span aria-hidden="true">&laquo;</span>
+              <span class="sr-only">Previous</span>
+            </a>
+          </li>
+          <li class="page-item" *ngFor="let page of getPaginationArray()" [class.active]="page === currentPage">
+            <a class="page-link" href="#" (click)="goToPage(page, $event)">{{ page }}</a>
+          </li>
+          <li class="page-item" [class.disabled]="currentPage === totalPages">
+            <a class="page-link" href="#" aria-label="Next" (click)="goToPage(currentPage + 1, $event)">
+              <span aria-hidden="true">&raquo;</span>
+              <span class="sr-only">Next</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>

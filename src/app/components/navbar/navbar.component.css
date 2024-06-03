@@ -2,36 +2,40 @@
 
 /* Navbar Styles */
 .custom-navbar {
-    position: fixed; /* Change to fixed positioning */
-    top: 0;
-    width: 100%;
-    background: transparent;
-    border: none; /* Remove any borders */
-    box-shadow: none; /* Remove any box shadows */
-    z-index: 2; /* Ensure the navbar is above the hero section */
+  position: fixed;
+  /* Change to fixed positioning */
+  top: 0;
+  width: 100%;
+  background: transparent;
+  border: none;
+  /* Remove any borders */
+  box-shadow: none;
+  /* Remove any box shadows */
+  z-index: 2;
+  /* Ensure the navbar is above the hero section */
 }
 
 .custom-navbar .navbar-brand,
 .custom-navbar .nav-link,
 .custom-navbar .navbar-toggler {
-    color: white !important;
+  color: white;
 }
 
 .custom-navbar .navbar-toggler-icon {
-    filter: invert(1);
+  filter: invert(1);
 }
 
 /* Remove any borders from navbar elements */
 .navbar-nav .nav-link {
-    border: none !important;
+  border: none;
 }
 
 .navbar-nav .nav-item {
-    border: none !important;
+  border: none;
 }
 
 .navbar-toggler {
-    border: none !important;
+  border: none;
 }
 
 /* Add hover effect for links and icons */
@@ -41,5 +45,14 @@
 .custom-navbar .nav-link:hover i,
 .custom-navbar .nav-link i:hover,
 .custom-navbar .navbar-toggler-icon:hover {
-    color: yellow !important; /* Change color to yellow on hover */
+  color: yellow;
+  /* Change color to yellow on hover */
 }
+
+/* Active link style */
+.active-link {
+  color: yellow !important;
+  /* Change color to yellow when the link is active */
+  /*background-color: blue;*/
+}
+

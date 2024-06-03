@@ -1,0 +1,8 @@
+.selected {
+    color: rgb(128, 128, 48); /* Change the color to yellow */
+  }
+
+  .cursor{
+    cursor: pointer;
+  }
+  

@@ -1,1 +1,15 @@
-<p>subcategory works!</p>
+<div *ngFor="let category of categories">
+  <h6 class="cursor" (click)="onCategoryClick(category.categoryId)" [class.selected]="selectedCategoryId === category.categoryId">
+    <i class="fa fa-angle-right"></i> {{ category.categoryName }}
+  </h6>
+  <ul *ngIf="selectedCategoryId === category.categoryId && selectedSubcategories.length > 0">
+    <li class="cursor" *ngFor="let subcategory of selectedSubcategories"
+        (click)="onSubcategoryClick(subcategory.subCategoryId)"
+        [class.selected]="selectedSubcategoryId === subcategory.subCategoryId">
+      {{ subcategory.subCategoryName }}
+    </li>
+  </ul>
+  <p *ngIf="selectedCategoryId === category.categoryId && selectedSubcategories.length === 0">
+    No subcategories available
+  </p>
+</div>

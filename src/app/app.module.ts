@@ -20,6 +20,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
 import { HeroComponent } from './components/hero/hero.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { HeroComponent } from './components/hero/hero.component';
     NavbarComponent,
     CartComponent,
     //CategoryComponent,
-    SubcategoryComponent,
+    //SubcategoryComponent,
     ProductComponent,
     OrderComponent,
     PaymentComponent,
@@ -36,7 +37,8 @@ import { HeroComponent } from './components/hero/hero.component';
     RegisterComponent,
     ProfileComponent,
     FooterComponent,
-    HeroComponent
+    HeroComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
