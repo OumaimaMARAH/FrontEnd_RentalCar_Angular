@@ -21,6 +21,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
 import { HeroComponent } from './components/hero/hero.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { ContactComponent } from './components/contact/contact.component';
     //CategoryComponent,
     //SubcategoryComponent,
     ProductComponent,
-    OrderComponent,
+    //OrderComponent,
     PaymentComponent,
     LoginComponent,
     RegisterComponent,
@@ -47,7 +48,8 @@ import { ContactComponent } from './components/contact/contact.component';
     CoreModule,
     StoreModule.forRoot({}, {}),
     EffectsModule.forRoot([]),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

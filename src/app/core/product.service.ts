@@ -39,4 +39,8 @@ export class ProductService {
   searchProductsByName(keyword: string): Observable<Product[]>{
     return this.http.get<Product[]>(apiUrl+"/catalogues/api/products/search");
   }
+
+  getProductById(productId: Number): Observable<Product>{
+    return this.http.get<Product>(apiUrl+"/catalogues/api/products/"+productId);
+  }
 }
