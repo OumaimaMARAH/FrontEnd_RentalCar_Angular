@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - www.codingnepalweb.com -->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glassmorphism Login Form | CodingNepal</title>
+  <img src="assets/images/rentcar.jpeg" alt="Rent Car">
+  <link rel="stylesheet" href="login.component.css">
+</head>
+<body>
+  <div class="wrapper">
+  <form (ngSubmit)="onSubmit()">
+    <h2>Login</h2>
+    <div class="input-field">
+      <input type="email" name="email" [(ngModel)]="email" required>
+      <label>Enter your email</label>
+    </div>
+    <div class="input-field">
+      <input type="password" name="password" [(ngModel)]="password" required>
+      <label>Enter your password</label>
+    </div>
+    <div class="forget">
+      <label for="remember">
+        <input type="checkbox" id="remember" [(ngModel)]="rememberMe" name="rememberMe">
+        <p>Remember me</p>
+      </label>
+      <a href="#">Forgot password?</a>
+    </div>
+    <button type="submit">Log In</button>
+    <div class="register">
+      <p>Don't have an account? <a href="/register">Register</a></p>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>
+<!--<div class="container mt-5">
+  <h2>Register</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input type="text" id="username" class="form-control" formControlName="username">
+      <div *ngIf="registerForm.get('username')!.invalid && registerForm.get('username')!.touched" class="text-danger">
+        Username is required
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" id="email" class="form-control" formControlName="email">
+      <div *ngIf="registerForm.get('email')!.invalid && registerForm.get('email')!.touched" class="text-danger">
+        Valid email is required
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" id="password" class="form-control" formControlName="password">
+      <div *ngIf="registerForm.get('password')!.invalid && registerForm.get('password')!.touched" class="text-danger">
+        Password is required (min 6 characters)
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">Register</button>
+  </form>
+</div>-->

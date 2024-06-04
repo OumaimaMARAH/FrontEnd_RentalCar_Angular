@@ -1,0 +1,664 @@
+.text-overlay {
+    position: relative;
+    z-index: 3;
+    color: white;
+}
+
+.btn-secondary, .btn-white-outline {
+    margin-right: 10px;
+}
+
+body {
+  color: #000; /* Change text color to black */
+  background: #ffdb58; /* Change background color to yellow mustard */
+}
+
+.c-label {
+  color: #000; /* Change label color to black */
+  background-color: #ffdb58; /* Change label background color to yellow mustard */
+}
+
+.js-slider {
+  width: 70%; /* Reduce slider width */
+  height: 70vh; /* Reduce slider height */
+  margin: 0 auto;
+}
+
+.js-slider_item {
+  padding: 0.5rem 1rem; /* Reduce padding */
+}
+
+.wo-h3 {
+  margin-top: 2rem; /* Reduce margin-top */
+  margin-bottom: 1rem; /* Reduce margin-bottom */
+  padding-bottom: 0.5rem; /* Reduce padding-bottom */
+  border-bottom: none; /* Remove border-bottom */
+  font-size: 1.5rem; /* Reduce font size */
+}
+
+.wo-credit {
+  font-size: 1rem; /* Reduce font size for credits */
+}
+
+.js-slider_nav_item {
+  width: 3rem; /* Reduce nav item width */
+  height: 3rem; /* Reduce nav item height */
+}
+
+.js-slider_nav_item:before {
+  left: 0.8rem; /* Adjust arrow position */
+  top: 50%;
+}
+
+.js-slider_nav_item.next {
+  transform: rotateY(180deg) translate3d(-30%, 0, 0); /* Modify next nav item */
+}
+
+.js-slider_nav_item.next:hover {
+  transform: rotateY(180deg) translate3d(-30%, 0, 0); /* Modify next nav item hover */
+}
+
+.js-slider_indicator {
+  top: 75%; /* Adjust indicator position */
+}
+
+.js-slider-indi {
+  padding: 0.5rem; /* Reduce padding for indicators */
+}
+
+.js-slider-indi:after {
+  width: 0.7rem; /* Reduce indicator size */
+  height: 0.7rem; /* Reduce indicator size */
+}
+
+
+/*css*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  color: #fff;
+  background: #000;
+}
+li {
+  list-style: none;
+}
+input[type="radio"] {
+  display: none;
+}
+.js-slider {
+  position: relative;
+  width: 80%;
+  height: 100vh;
+  margin: 0 auto;
+}
+.js-slider_item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 3rem;
+  opacity: 0;
+  visibility: hidden;
+  transform-origin: right center;
+  transform: translate3d(0%, 0%, 0) rotateY(30deg) scaleX(0.95);
+  transition: all 1s ease,transform 1s cubic-bezier(0.43, 0.28, 0.51, 1);
+}
+#s-1:checked ~ .js-slider .js-slider_item.img-1,
+#s-2:checked ~ .js-slider .js-slider_item.img-2,
+#s-3:checked ~ .js-slider .js-slider_item.img-3 {
+  opacity: 1;
+  visibility: visible;
+  transform-origin: left center;
+  transform: translate3d(0, 0, 0) rotateY(0deg) scaleX(1);
+}
+.js-slider_img {
+  width: 100%;
+  height: 60%;
+  position: relative;
+  overflow: hidden;
+}
+.c-img-w-full {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: auto;
+  transform: translate3d(-50%, -50%, 0);
+}
+.c-img-h-full {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: 100%;
+  transform: translate3d(-50%, -50%, 0);
+}
+figcaption {
+  display: block;
+}
+.wo-h3 {
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #1a1516;
+}
+.c-label {
+  display: inline-block;
+  color: #eee;
+  background-color: rgba(32, 27, 27, 0.9);
+  line-height: 1;
+  padding: 0.5em 0.9em;
+  margin-right: 0.5em;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.view-sm {
+  display: none;
+}
+.js-slider_nav {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  transform: translate3d(0, -50%, 0);
+}
+.js-slider_nav_item.prev {
+  left: 0;
+}
+.js-slider_nav_item.next {
+  right: 0;
+  transform: rotateY(180deg);
+}
+.js-slider_nav_item {
+  position: absolute;
+  display: none;
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid #1b1616;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.js-slider_nav_item:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 1rem;
+  top: 55%;
+  width: 1rem;
+  height: 1px;
+  background-color: #161213;
+  transform-origin: left bottom;
+  transform: translate3d(0, -50%, 0) rotate(-45deg);
+  transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.js-slider_nav_item:hover {
+   transform: translate3d(-30%, 0, 0);
+}
+.js-slider_nav_item.next:hover {
+   transform: rotateY(180deg) translate3d(-30%, 0, 0);
+}
+.js-slider_nav_item:hover:before {
+  transform: translate3d(0, -50%, 0) rotate(-30deg);
+}
+.js-slider_nav_item:after {
+  content: "";
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  width: 2rem;
+  height: 1px;
+  background-color: #141412;
+  transform: translate3d(-50%, -50%, 0);
+}
+#s-1:checked ~ .js-slider .js-slider_nav .s-nav-1,
+#s-2:checked ~ .js-slider .js-slider_nav .s-nav-2,
+#s-3:checked ~ .js-slider .js-slider_nav .s-nav-3 {
+  display: block;
+}
+.js-slider_indicator {
+  position: absolute;
+  left: 0;
+  top: 63%;
+  width: 100%;
+  text-align: center;
+}
+.js-slider-indi {
+  position: relative;
+  display: inline-block;
+  padding: 1rem;
+  cursor: pointer;
+}
+.js-slider-indi:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1rem;
+  background: #352527;
+  transform: translate3d(-50%, -50%, 0);
+}
+.js-slider-indi:hover:after {
+  transform: translate3d(-50%, -50%, 0) scale(1.5);
+  transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#s-1:checked ~ .js-slider .js-slider_indicator .indi-1:after,
+#s-2:checked ~ .js-slider .js-slider_indicator .indi-2:after,
+#s-3:checked ~ .js-slider .js-slider_indicator .indi-3:after {
+  transform: translate3d(-50%, -50%, 0) scale(2.5);
+}
+
+/**/
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300&display=swap');
+
+:root {
+	--img: url(https://cdn.josetxu.com/img/gp-fisura-saqueadores.jpg);
+}
+
+html {
+	background-color: #fff;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-size: cover;
+	background-position: center center;
+	background-image: var(--img, url(https://cdn.josetxu.com/img/gp-fisura-saqueadores.jpg));
+	transition: background 0.5s ease 0s;
+	font-family: 'Londrina Solid', cursive;
+}
+
+body:before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #000000c9;
+	z-index: 0;
+}
+
+.content {
+	width: 60vmin;
+	height: 60vmin;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-size: cover;
+	background-position: center center;
+	background-image: var(--img, url(https://cdn.josetxu.com/img/gp-fisura-saqueadores.jpg));
+	transition: background 0.5s ease 0s;
+	max-width: 500px;
+	max-height: 500px;
+	box-shadow: 0 0 0vmin 1vmin #fff, 0 0 10vmin 5vmin #000;
+	border-radius: 2px;
+	z-index: 0;
+	background-color: #fff;
+}
+
+.content:before {
+	content: "cuadernodeescaladas.com";
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	margin-bottom: -55vmin;
+	text-shadow: -1px -1px 0 #0007;
+	color: #fff4;
+	font-size: 18px;
+}
+
+
+.controls {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: row;
+	flex-wrap: wrap;
+	position: absolute;
+}
+
+input[type=radio] {
+	display: none;
+}		
+
+label {
+	width: 50vw;
+	height: 100vh;
+	position: relative;
+	cursor: pointer;
+	opacity: 0.15;
+}
+
+label:hover {
+	opacity: 1;
+}
+
+input:first-child:checked ~ .content .controls label:first-child,
+input:last-of-type:checked ~ .content .controls label:last-of-type {
+	cursor: default;
+	opacity: 0.025;
+}
+
+
+
+#b2:checked ~ .content .controls label[for=b2], 
+#b3:checked ~ .content .controls label[for=b3], 
+#b4:checked ~ .content .controls label[for=b4], 
+#b5:checked ~ .content .controls label[for=b5], 
+#b6:checked ~ .content .controls label[for=b6], 
+#b7:checked ~ .content .controls label[for=b7], 
+#b8:checked ~ .content .controls label[for=b8], 
+#b9:checked ~ .content .controls label[for=b9], 
+
+#b3:checked ~ .content .controls label[for=b1],
+#b4:checked ~ .content .controls label[for=b1],
+#b4:checked ~ .content .controls label[for=b2],
+#b5:checked ~ .content .controls label[for=b1],
+#b5:checked ~ .content .controls label[for=b2],
+#b5:checked ~ .content .controls label[for=b3],
+#b6:checked ~ .content .controls label[for=b1],
+#b6:checked ~ .content .controls label[for=b2],
+#b6:checked ~ .content .controls label[for=b3],
+#b6:checked ~ .content .controls label[for=b4],
+#b7:checked ~ .content .controls label[for=b1],
+#b7:checked ~ .content .controls label[for=b2],
+#b7:checked ~ .content .controls label[for=b3],
+#b7:checked ~ .content .controls label[for=b4],
+#b7:checked ~ .content .controls label[for=b5],
+#b8:checked ~ .content .controls label[for=b1],
+#b8:checked ~ .content .controls label[for=b2],
+#b8:checked ~ .content .controls label[for=b3],
+#b8:checked ~ .content .controls label[for=b4],
+#b8:checked ~ .content .controls label[for=b5],
+#b8:checked ~ .content .controls label[for=b6],
+#b9:checked ~ .content .controls label[for=b1],
+#b9:checked ~ .content .controls label[for=b2],
+#b9:checked ~ .content .controls label[for=b3],
+#b9:checked ~ .content .controls label[for=b4],
+#b9:checked ~ .content .controls label[for=b5],
+#b9:checked ~ .content .controls label[for=b6],
+#b9:checked ~ .content .controls label[for=b7],
+#b10:checked ~ .content .controls label[for=b1] ,
+#b10:checked ~ .content .controls label[for=b2] ,
+#b10:checked ~ .content .controls label[for=b3] ,
+#b10:checked ~ .content .controls label[for=b4] ,
+#b10:checked ~ .content .controls label[for=b5] ,
+#b10:checked ~ .content .controls label[for=b6] ,
+#b10:checked ~ .content .controls label[for=b7] ,
+#b10:checked ~ .content .controls label[for=b8] {
+	display: none;
+}
+
+
+label:before {
+	content: "";
+	position: absolute;
+	background: 
+		linear-gradient(30deg, #fff0 60%, #fff calc(60% + 1px)), 
+		linear-gradient(-30deg, #fff 40%, #fff0 calc(40% + 1px)), 
+		linear-gradient(-90deg, #fff0 70%, #fff calc(70% + 1px));
+	width: 6vmin;
+	height: 6vmin;
+	border-radius: 5px;
+	right: 7vmin;
+	top: calc(50% - 3vmin);
+}
+
+#b1:checked ~ .content .controls label[for=b1]:before,
+#b2:checked ~ .content .controls label[for=b1]:before,
+#b3:checked ~ .content .controls label[for=b2]:before,
+#b4:checked ~ .content .controls label[for=b3]:before,
+#b5:checked ~ .content .controls label[for=b4]:before,
+#b6:checked ~ .content .controls label[for=b5]:before,
+#b7:checked ~ .content .controls label[for=b6]:before,
+#b8:checked ~ .content .controls label[for=b7]:before,
+#b9:checked ~ .content .controls label[for=b8]:before,
+#b10:checked ~ .content .controls label[for=b9]:before {
+	left: 7vmin;
+	transform: rotate(180deg);
+}
+
+
+
+body:after {
+	content: "Saqueadores de Conventos (6b+) \a RISCO DE LOS SAQUEADORES";
+	position: absolute;
+	top: 2vh;
+	color: #fff;
+	font-size: 35px;
+	line-height: 45px;
+	transition: all 0.5s ease 0s;
+	text-shadow: 0px 1px 0 #000000d9;
+	white-space: pre-wrap;
+	text-align: center;
+	width: 100vw;
+	padding: 1vmin;
+	background: #ffffff05;
+	font-weight: 300;
+}
+
+body:has(input#b1:checked):after {
+	content: "Saqueadores de Conventos (6b+) \a RISCO DE LOS SAQUEADORES";
+}
+
+body:has(input#b2:checked):after {
+	content: "Lucas (A2/V+) \a EL HUESO";
+}
+
+body:has(input#b3:checked):after {
+	content: "El blues de los ojos bonitos (6a+) \a TRES CORONAS";
+}
+
+body:has(input#b4:checked):after {
+	content: "Perros Salvajes (A4) \a EL GRAN MOLONDRIO";
+}
+
+body:has(input#b5:checked):after {
+	content: "To\00F1 in (7b) \a ROC\00D3 DROMO";
+}
+
+body:has(input#b6:checked):after {
+	content: "El Clan de los Osos (A2) \a EL PANDEMONIUM";
+}
+
+body:has(input#b7:checked):after {
+	content: "Oscar y Raul (V+/6a) \a HUECO DE LAS HOCES";
+}
+
+body:has(input#b8:checked):after {
+	content: "Me pesa hasta el aire (A2/?) \a RISCO DE LA DEHESILLA";
+}
+
+body:has(input#b9:checked):after {
+	content: "Diedro (6b) \a RISCO DE LA MEZQUITA";
+}
+
+body:has(input#b10:checked):after {
+	content: "Biafra (6a+/A2) \a EL HUESO";
+}
+
+
+.thumbnails {
+	position: absolute;
+	background: #ffffff05;
+	width: 100vw;
+	bottom: 3vh;
+	text-align: center;
+	padding: 1vmin;
+}
+
+.thumbnails label {
+	background-color: #0008;
+	position: relative;
+	width: 8vmin;
+	height: 8vmin;
+	display: inline-block;
+	margin-left: 1vw;
+	background-image: var(--img);
+	background-size: cover;
+	background-position: center;
+	opacity: 0.5;
+	border-radius: 2px;
+}
+
+body:has(input#b1:checked), .thumbnails label[for=b1] {
+	--img: url(https://cdn.josetxu.com/img/gp-fisura-saqueadores.jpg);
+}
+
+body:has(input#b2:checked), .thumbnails label[for=b2] {
+	--img: url(https://cdn.josetxu.com/img/gp-lucas-hueso.jpg);
+}
+
+body:has(input#b3:checked), .thumbnails label[for=b3] {
+	--img: url(https://cdn.josetxu.com/img/gp-blues-ojos-bonitos-tres-coronas.jpg);
+}
+
+body:has(input#b4:checked), .thumbnails label[for=b4] {
+	--img: url(https://cdn.josetxu.com/img/gp-perros-salvajes-gran-molondrio.jpg);
+}
+
+body:has(input#b5:checked), .thumbnails label[for=b5] {
+	--img: url(https://cdn.josetxu.com/img/gp-tonin-rocodromo.jpg);
+}
+
+body:has(input#b6:checked), .thumbnails label[for=b6] {
+	--img: url(https://cdn.josetxu.com/img/gp-clan-de-los-osos-pandemonium.jpg);
+}
+
+body:has(input#b7:checked), .thumbnails label[for=b7] {
+	--img: url(https://cdn.josetxu.com/img/gp-oscar-raul-hueco-hoces2.jpg);
+}
+
+body:has(input#b8:checked), .thumbnails label[for=b8] {
+	--img: url(https://cdn.josetxu.com/img/gp-me-pesa-hasta-el-aire-dehesilla.jpg);
+}
+
+body:has(input#b9:checked), .thumbnails label[for=b9] {
+	--img: url(https://cdn.josetxu.com/img/gp-diedro-mezquita.jpg);
+}
+
+body:has(input#b10:checked), .thumbnails label[for=b10] {
+	--img: url(https://cdn.josetxu.com/img/gp-biafra-hueso.jpg);
+}
+
+.thumbnails label:before { display: none; }
+.thumbnails label:hover { opacity: 1; }
+.thumbnails label:first-child { margin-left: 0; }
+
+#b1:checked ~ .content .thumbnails label[for=b1],
+#b2:checked ~ .content .thumbnails label[for=b2],
+#b3:checked ~ .content .thumbnails label[for=b3],
+#b4:checked ~ .content .thumbnails label[for=b4],
+#b5:checked ~ .content .thumbnails label[for=b5],
+#b6:checked ~ .content .thumbnails label[for=b6],
+#b7:checked ~ .content .thumbnails label[for=b7],
+#b8:checked ~ .content .thumbnails label[for=b8],
+#b9:checked ~ .content .thumbnails label[for=b9],
+#b10:checked ~ .content .thumbnails label[for=b10] {
+	opacity: 1;
+	box-shadow: 0 0 0.01vmin 0.5vmin #fff;
+}
+
+
+
+@media only screen and (max-width:767px) {
+	body:after {
+		top: 2vh;
+		font-size: 20px;
+		white-space: initial;
+	}
+}
+
+@media only screen and (max-width:580px) {
+	body:after {
+		font-size: 25px;
+		white-space: pre-wrap;
+	}
+}
+
+.firefox {
+	background: #0008;
+	color: #fff;
+	position: absolute;
+	top: 45vh;
+	width: 45vmin;
+	padding: 2vmin 3vmin;
+	border-radius: 5px;
+	text-align: center;
+	font-size: 24px;
+}
+
+.firefox span code {
+	font-size: 24px;
+	background: #0008;
+	padding: 0 10px;
+	border-radius: 25px;
+}
+
+@supports (-webkit-font-smoothing: antialiased) {
+	.firefox {
+		display: none;
+	}
+}
+
+  
+/* why ...*/ 
+
+.why_section{
+  display: flex;
+  gap: 50px;
+}
+.why_section .box {
+  text-align: center;
+  margin-top: 45px;
+  background-color: #f8ad0c;
+  padding: 35px 35px;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+.detail-box h5 {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.remove_line_bt h2::after {
+  display: none;
+}
+
+.why_section .box .img-box {
+margin-bottom: 15px;
+}
+
+.why_section .box .img-box svg {
+width: 55px;
+height: auto;
+fill: #ffffff;
+}
+.heading_container {
+  margin-top: 100px;
+  position: center;
+
+}
+
+.box.img-box {
+  -ms-text-kashida-space: 0%;
+  padding: 50%;
+}
+
+/* why ...*/ 

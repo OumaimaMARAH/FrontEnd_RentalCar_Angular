@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Responsive Registration Form | CodingLab</title>
+    <link rel="stylesheet" href="register.component.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+<body>
+ <!--<div class="video-background">
+  <video autoplay muted loop id="bg-video">
+    <source src="assets/images/VidRegister.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+  </div>-->
+  <div class="container">
+    <div class="title">Registration Form</div>
+    <div class="content">
+      <form (submit)="onSubmit()" [formGroup]="registerForm">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details"></span>
+            <input type="text" placeholder="Enter your first name" required>
+          </div>
+          <div class="input-box">
+            <span class="details"></span>
+            <input type="text" placeholder="Enter your last name" required>
+          </div>
+          <div class="input-box">
+            <span class="details"></span>
+            <input type="text" placeholder="Enter your username" required>
+          </div>
+          <div class="input-box">
+            <span class="details"></span>
+            <input type="text" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box">
+            <span class="details"></span>
+            <input type="text" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details"></span>
+            <input type="password" placeholder="Enter your password" id="password" required>
+          </div>
+          <div class="input-box">
+            <span class="details"></span>
+            <input type="password" placeholder="Confirm your password" id="confirm-password" required>
+          </div>
+        </div>
+        <div class="show-password">
+          <input type="checkbox" id="show-password-checkbox">
+          <label for="show-password-checkbox">Show Password</label>
+        </div>
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+  
+
+  <script>
+    const showPasswordCheckbox = document.getElementById('show-password-checkbox');
+    const passwordField = document.getElementById('password');
+    const confirmPasswordField = document.getElementById('confirm-password');
+
+    showPasswordCheckbox.addEventListener('change', function() {
+      const type = this.checked ? 'text' : 'password';
+      passwordField.type = type;
+      confirmPasswordField.type = type;
+    });
+  </script>
+</body>
+</html>
